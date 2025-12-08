@@ -47,6 +47,7 @@ CONFIG_VALUES = {
     # Download Options
     BULK_WAIT_TIME:             { 'default': '1',                       'type': int,    'arg': ('--bulk-wait-time'                       ,) },
     DOWNLOAD_REAL_TIME:         { 'default': 'False',                   'type': bool,   'arg': ('-rt', '--download-real-time'            ,) },
+    REALTIME_SPEED_FACTOR:      { 'default': '1',                       'type': int,    'arg': ('--realtime-speed-factor'                ,) },
     TEMP_DOWNLOAD_DIR:          { 'default': '',                        'type': str,    'arg': ('-td', '--temp-download-dir'             ,) },
     DOWNLOAD_PARENT_ALBUM:      { 'default': 'False',                   'type': bool,   'arg': ('--download-parent-album'                ,) },
     NO_COMPILATION_ALBUMS:      { 'default': 'False',                   'type': bool,   'arg': ('--no-compilation-albums'                ,) },
@@ -308,6 +309,10 @@ class Config:
     @classmethod
     def get_download_real_time(cls) -> bool:
         return cls.get(DOWNLOAD_REAL_TIME)
+    
+    @classmethod
+    def get_realtime_speed_factor(cls) -> int:
+        return cls.get(REALTIME_SPEED_FACTOR)
     
     @classmethod
     def get_download_quality(cls) -> str:

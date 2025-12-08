@@ -121,6 +121,7 @@ Set arguments in the commandline like this: `-ie False` or `--codec mp3`. Wrap c
 |------------------------------|-------------------------------------|------------------------------------------------------------------------------------------|---------------|
 | `BULK_WAIT_TIME`             | `--bulk-wait-time`                  | The wait time between track downloads, in seconds                                        | 1             |
 | `DOWNLOAD_REAL_TIME`         | `-rt`, `--download-real-time`       | Downloads songs as fast as they would be played, should prevent account bans             | False         |
+| `REALTIME_SPEED_FACTOR`      | `--realtime-speed-factor`           | Speed multiplier for real-time downloads (1 = actual realtime, 2 = 2x realtime, etc.)    | 1             |
 | `TEMP_DOWNLOAD_DIR`          | `-td`, `--temp-download-dir`        | Directory where tracks are temporarily downloaded first, `""` meaning disabled           | `""`          |
 | `DOWNLOAD_PARENT_ALBUM`      | `--download-parent-album`           | Download a track's parent album, including itself (uses `OUTPUT_ALBUM` file pattern)     | False         |
 | `NO_COMPILATION_ALBUMS`      | `--no-compilation-albums`           | Skip downloading an album if API metadata labels it a compilation (not recommended)      | False         |
