@@ -5,10 +5,11 @@ RUN apk --update add --no-cache ffmpeg git
 FROM base AS builder
 
 WORKDIR /install
-COPY requirements.txt /requirements.txt
+COPY pyproject.toml /build/pyproject.toml
+COPY zotify /build/zotify
 
 RUN apk add gcc jpeg-dev libc-dev zlib zlib-dev
-RUN pip install --prefix="/install" -r /requirements.txt
+RUN pip install --prefix="/install" /build
 
 FROM base
 
