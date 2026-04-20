@@ -21,6 +21,7 @@ services:
       - BULK_WAIT_TIME=10.0
       - EXPORT_M3U8=True
       - M3U8_LOCATION=/root/Music/Zotify Music
+    entrypoint: ["tail", "-f", "/dev/null"]
 
     security_opt:
       - no-new-privileges:true
