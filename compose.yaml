@@ -10,6 +10,7 @@ services:
     ports:
       - "4381:4381"
     volumes:
+      - ${DOCKER_VOLUMES}/zotify/credentials:/root/.local/share/zotify
       - ${DOCKER_VOLUMES}/zotify/config:/root/.config/zotify
       - ${DOCKER_VOLUMES}/zotify/music:/root/Music/Zotify Music
       - ${DOCKER_VOLUMES}/zotify/podcasts:/root/Music/Zotify Podcasts
