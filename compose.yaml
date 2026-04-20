@@ -5,8 +5,6 @@ services:
     image: mwdle/zotify:custom
     container_name: zotify
     restart: "no"
-    stdin_open: true
-    tty: true
     ports:
       - "4381:4381"
     volumes:
