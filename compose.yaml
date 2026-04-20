@@ -1,0 +1,42 @@
+name: zotify
+services:
+  zotify:
+    build: .
+    image: mwdle/zotify:custom
+    container_name: zotify
+    restart: "no"
+    stdin_open: true
+    tty: true
+    ports:
+      - "4381:4381"
+    volumes:
+      - ${PWD}/media/music:/root/Music/Zotify Music
+      - ${PWD}/media/podcasts:/root/Music/Zotify Podcasts
+    environment:
+      - OUTPUT={artist}/{album}/{artists} - {song_name}
+      - DOWNLOAD_RATE_LIMITER=0.5
+      - DOWNLOAD_QUALITY=very_high
+      - MD_ALLGENRES=True
+      - RETRY_ATTEMPTS=2
+      - BULK_WAIT_TIME=10.0
+      - EXPORT_M3U8=True
+      - M3U8_LOCATION=/root/Music/Zotify Music
+
+    user: "${UID}:${GID}"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+    logging:
+      driver: journald
+
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: 1GB
+          pids: 100
