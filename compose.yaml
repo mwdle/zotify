@@ -24,9 +24,6 @@ services:
       - M3U8_LOCATION=/root/Music/Zotify Music
 
     user: "${UID}:${GID}"
-    read_only: true
-    tmpfs:
-      - /tmp
     security_opt:
       - no-new-privileges:true
     cap_drop:
