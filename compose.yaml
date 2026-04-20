@@ -10,8 +10,8 @@ services:
     ports:
       - "4381:4381"
     volumes:
-      - ${PWD}/zotify/music:/root/Music/Zotify Music
-      - ${PWD}/zotify/podcasts:/root/Music/Zotify Podcasts
+      - ${DOCKER_VOLUMES}/zotify/music:/root/Music/Zotify Music
+      - ${DOCKER_VOLUMES}/zotify/podcasts:/root/Music/Zotify Podcasts
     environment:
       - OUTPUT={artist}/{album}/{artists} - {song_name}
       - DOWNLOAD_RATE_LIMITER=0.5
