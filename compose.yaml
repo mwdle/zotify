@@ -10,6 +10,7 @@ services:
     ports:
       - "4381:4381"
     volumes:
+      - ${PWD}/config:/.config
       - ${PWD}/media/music:/root/Music/Zotify Music
       - ${PWD}/media/podcasts:/root/Music/Zotify Podcasts
     environment:
