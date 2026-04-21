@@ -15,7 +15,6 @@ services:
     environment:
       - CREDENTIALS_LOCATION=/root/.local/share/zotify
       - API_CLIENT_ID=${API_CLIENT_ID}
-      - REDIRECT_ADDRESS=${REDIRECT_ADDRESS}
       - OUTPUT={artist}/{album}/{artists} - {song_name}
       - DOWNLOAD_RATE_LIMITER=0.5
       - DOWNLOAD_QUALITY=very_high
