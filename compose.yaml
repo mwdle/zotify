@@ -6,7 +6,7 @@ services:
     container_name: zotify
     restart: "no"
     ports:
-      - "4381:4381"
+      - "1234:4381"
     volumes:
       - ${DOCKER_VOLUMES}/zotify/credentials:/root/.local/share/zotify
       - ${DOCKER_VOLUMES}/zotify/config:/root/.config/zotify
