@@ -1,4 +1,4 @@
-FROM python:3.10-alpine@sha256:c99275d6bc0c37d8e98b388d4c404861fda7dad5ff87e2995fe7b7bb33898aed AS base
+FROM python:3.10-alpine@sha256:b974a5de91b4ac6da8313502cd5bfe65c499e390d32658e1f2deea26fa5afb14 AS base
 
 RUN apk --update add --no-cache ffmpeg git
 
